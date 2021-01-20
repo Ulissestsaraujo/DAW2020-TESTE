@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 Classes Nivel 1
+    table
+        thead
+            th Código
+            th Title
+        tbody
+            for item in pagClasses
+                tr
+                    td  
+                        a(href="/classes/id/"+item.codigo)= item.codigo
+                    td
+                        a(href="/classes/id/"+item.codigo)=item.titulo
+    a(href=('/'))
+        p Voltar ao inicio            

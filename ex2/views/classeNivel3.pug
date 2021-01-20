@@ -1,0 +1,35 @@
+extends layout
+block content
+    h1 Classe nivel #{classe.nivel}
+    table
+        thead
+            tr
+                th Codigo
+                th Title
+                th Descrição
+                th Estado
+        tbody
+            tr
+                td = classe.codigo
+                td = classe.titulo
+                td = classe.descricao
+                td = classe.status
+    if(classe.filhos.length)
+        h2 Descendencia
+        table
+            thead
+                tr
+                    th Codigo
+                    th Title
+                    th Descrição
+                    th Estado
+            tbody
+                for item in classe.filhos
+                    tr
+                        td
+                            a(href="/classes/id/"+item.codigo)item.codigo
+                            td=item.titulo
+                            td=item.descricao
+                            td=item.status
+    a(href=('/'))
+        p Voltar à Página inicial
