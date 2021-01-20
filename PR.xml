@@ -17,15 +17,16 @@
     <abstract>
         <p>No que toca à limpeza do ficheiro json primeiro foram adicionadas as aspas e a virgula que faltavam no ficheiro em geral, tendo sido detectado através do VSCode, seguidamente adicionaram-se as aspas que faltavam nas keys dos registos através de um simples find replace no VS code também, como por exemplo substituir as ocorrências de date: por "date":, finalmente
         para adicionar o "_id", "mae" e "pai" foi utilizado o script json-parser desenvolvido em python disponibilizado em anexo.</p>
+        <p> No que toca ao mongo foi corrido o comando mongoimport -d DAW2020-Teste -c batismos --jsonArray batismos-clean.json para importar o ficheiro limpo para persistência </p>
         <p>Quanto às perguntas de aquecimento do 2º Exercicio:
-            1- 
-            2- 
-            3- 
-            4-
-            5-  </p>
+            1: 2    ex1aquecimento.json
+            2: 637
+            3: 8
+            4: 5
+         </p>
     </abstract>
     <deliverables>
-        <link url="http://github.com/Ulissestsaraujo/DAW2020/tree/main/T8/dawApp">Código fonte do servidor e forms</link>
-        <link url="http://github.com/Ulissestsaraujo/DAW2020/tree/main/T8/projectrecord.xml">projectrecord.xml</link>
+        <link url="https://github.com/Ulissestsaraujo/DAW2020-Teste/">Código fonte dos 2 servidores</link>
+        <link url="https://github.com/Ulissestsaraujo/DAW2020-Teste/blob/main/PR.xml">PR.xml</link>
     </deliverables>
 </pr>

@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1 Classe Nivel #{class.nivel}
+  h1 Classe Nivel #{classe.nivel}
   table
       thead
           tr
@@ -11,11 +11,11 @@ block content
               th Estado
       tbody
             tr
-                td=class.codigo
-                td=class.titulo
-                td=class.descricao
-                td=class.status
-  if (class.filhos.length > 0)
+                td=classe.codigo
+                td=classe.titulo
+                td=classe.descricao
+                td=classe.status
+  if (classe.filhos.length > 0)
     h2 Descendentes:
     table
       thead
@@ -25,7 +25,7 @@ block content
               th Descrição
               th Estado
       tbody
-            for i in class.filhos
+            for i in classe.filhos
                 tr
                     td 
                         a(href="/classs/id/c" + i.codigo)= i.codigo
