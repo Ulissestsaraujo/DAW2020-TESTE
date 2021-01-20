@@ -10,10 +10,7 @@ axios.post('http://clav-api.di.uminho.pt/v2//users/login',{username: "daw2020@te
     .catch((err) => {
         console.log(err);
     });
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
+
 
 router.get('/classes', function(req, res, next) {
   axios.get('http://clav-api.di.uminho.pt/v2/classes?nivel=1&token=' + apiKey)
@@ -26,13 +23,25 @@ router.get('/classes', function(req, res, next) {
 });
 
 router.get('/classes/id/:id', function(req, res, next) {
-  axios.get('http://clav-api.di.uminho.pt/v2/classes?nivel=1&token=' + apiKey)
-      .then(result => {
-          res.render('pagClasses', { pagClasses: result.data })
+  axios.get('http://clav-api.di.uminho.pt/v2/classes/'+ req.params.id + '?token=' + apiKey)
+      .then(resultado => {
+          var nivelClasse = resultado.data.nivel
+          if(nivelClasse==3){
+            res.render('classeNivel3',{
+              class: resultado.data
+            })
+          }else{
+            res.render('classe',{
+              class:resultado.data
+            })
+          }
       })
       .catch(error => {
           res.render('error', { error: error })
       });
 });
-
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index');
+});
 module.exports = router;

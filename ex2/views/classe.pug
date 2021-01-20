@@ -32,18 +32,5 @@ block content
                     td=i.titulo
                     td=i.descricao
                     td=i.status
-  if (class.termosInd.length > 0)
-    h2 Termos indíce:
-    table
-      thead
-          tr
-              th Id
-              th Termo
-      tbody
-            for t in class.termosInd
-                tr
-                    td 
-                        a(href="/termosInd")= t.idTI                    
-                    td=t.termo
   a(href=('/'))
-    p Voltar À Página inicial
+    p Voltar À página inicial
